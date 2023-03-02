@@ -12,8 +12,9 @@ struct registert
 		std::string contact;
 		std::string subCounty;
 		std::string games;
-		std::string weight;
-		std::string height;
+		int age;
+		int weight;
+		int height;
 		std::string specialNeeds;
 };
 
@@ -65,6 +66,7 @@ void maringo::welcome()
 void maringo::school()
 {
 	//system("clear");
+	maringo mar;
 	char pay;
 	std::cout << "\t Have you paid ksh 500 (Y) for yes and (N) for no: ";
 	std::cin >> pay;
@@ -76,7 +78,8 @@ void maringo::school()
 		std::cin >> admNo;
 		std::cout << "\t\t\t\t\tClass: ";
 		std::cin >> stdClass; 
-		std::cout << "\t Thankyou!! You can now continue to the main registration";
+		std::cout << "\t Thankyou!! You can now continue to the main registration \n";
+		mar.registration();
 	}
 	else if (pay == 'N' || pay == 'n') {
 		std::cout << "Kindly pay the registration fee!!!!";
@@ -91,6 +94,7 @@ void maringo::religious()
 {
 
 	//system("clear");
+	maringo mar;
 	char pay;
 	std::cout << "\t Have you paid ksh 500 (Y) for yes and (N) for no: ";
 	std::cin >> pay;
@@ -100,7 +104,8 @@ void maringo::religious()
 		std::cin >> schoolName;
 		std::cout << "\t\t\t\t\t Location: ";
 		std::cin >> location;
-		std::cout << "\t Thankyou!! You can now continue to the main registration";
+		std::cout << "\t Thankyou!! You can now continue to the main registration \n";
+		mar.registration();
 	}
 	else if (pay == 'N' || pay == 'n') {
 		std::cout << "Kindly pay the registration fee!!!!";
@@ -133,12 +138,27 @@ void maringo::registration()
 	std::cin >> (*ptr).subCounty ;
 	std::cout << "\tGames: ";
 	std::cin >> (*ptr).games ;
+	std::cout << "\tAge: ";
+	std::cin >> (*ptr).age ;
 	std::cout << "\tWeight: ";
 	std::cin >> (*ptr).weight ;
 	std::cout << "\tHeight: ";
 	std::cin >> (*ptr).height ;
 	std::cout << "\tSpecial needs: ";
 	std::cin >> (*ptr).specialNeeds ;
+	if ((*ptr).age >= 12 && (*ptr).age <= 17) {
+		std::cout << "Enrolled to the minor group";
+	}
+	else if ((*ptr).age >= 18 && (*ptr).age <= 25) {
+		std::cout << "Enrolled to the middle group";
+	
+	}
+	else if ((*ptr).age >= 26 && (*ptr).age <= 35) {
+		std::cout << "Enrolled to the senior group";
+	}
+	else {
+		std::cout << "You are not eligible";
+	}
 }
 
 int main()
@@ -146,6 +166,6 @@ int main()
 	maringo mar;
 	mar.welcome();
 	//mar.school();
-	//mar.religious();
-	mar.registration();
+	mar.religious();
+	//mar.registration();
 }
