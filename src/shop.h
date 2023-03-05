@@ -7,6 +7,7 @@
 
 
 
+
 class shop
 {
 	public:
@@ -19,7 +20,7 @@ class shop
 
 
 };
-void shop::items()
+inline void shop::items()
 {
 	std::cout << "\t Item \t\t Amount/Per item (ksh)       " << "\n"; 
 	std::cout << " (1) \t Bloomer \t\t 250\n";
@@ -50,7 +51,7 @@ void shop::items()
 }
 
 
-void shop::recipt()
+inline void shop::recipt()
 {
 	std::stringstream ss;
     	ss << std::fixed << std::setprecision(2) << total_price;
