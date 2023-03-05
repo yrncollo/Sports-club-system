@@ -1,24 +1,28 @@
 #include "main.h"
 
-struct registert
+struct details
 {
-
-		std::string fullName;
-		std::string gender;
-		std::string nextOfKin;
-		std::string dOB;
-		std::string contact;
-		std::string subCounty;
-		std::string games;
-		int age;
-		int weight;
-		int height;
-		std::string specialNeeds;
+	std::string full_name;
+	char gender;
+	std::string next_of_kin;
+	std::string date_of_birth;
+	std::string contact_details;
+	std::string sub_counties;
+	std::string school_or_college;
+	std::vector<std::string> games_of_interest;
+	int weight;
+	int height;
+	std::string special_needs;
 };
+
 
 
 class maringo
 {
+	private:
+		int individual_fee = 1000;
+		int group_fee = 500;
+
 	public:
 		std::string admNo;
 		std::string stdClass; //student class
@@ -30,6 +34,14 @@ class maringo
 		void religious();
 		void registration();
 		void individual();
+		int calculate_individual_fee() {
+		    return individual_fee;
+		}
+
+
+		int calculate_group_fee(int num_members) {
+		    return group_fee * num_members;
+		}
 };
 
 inline void maringo::welcome()
@@ -49,156 +61,64 @@ inline void maringo::welcome()
 	std::cout << "\t\t| \t 11) Baseball \t 12) Rugby              |" << "\n"; 
 	std::cout << "\t\t| \t 13) Pool \t 14) Chess              |" << "\n"; 
 	std::cout << "\t\t| \t 15) Draft                              |" << "\n"; 
-	std::cout << "\t\t|-----------------------------------------------|" << "\n\n"; 
-	std::cout << "\t\t|-----------------------------------------------|" << "\n"; 
-	std::cout << "\t\t|\t Where are you registering from?:       |" << "\n"; 
-	std::cout << "\t\t|-----------------------------------------------|" << "\n"; 
-	std::cout << "\t\t|                                               |" << "\n"; 
-	std::cout << "\t\t|\t\t 1) School      	        |" << "\n"; 
-	std::cout << "\t\t|                                               |" << "\n"; 
-	std::cout << "\t\t|\t\t 2) Religious Center            |" << "\n"; 
-	std::cout << "\t\t|                                               |" << "\n"; 
-	std::cout << "\t\t|\t\t 3) Individual                  |" << "\n"; 
 	std::cout << "\t\t|                                               |" << "\n"; 
 	std::cout << "\t\t|-----------------------------------------------|" << "\n\n\n";
 
-
-	std::cout << "\t\t Enter your choice: "; 
-	std::cin >> inpt;
-	switch (inpt) {
-		case 1:
-			school();
-			break;
-		case 2:
-			religious();
-			break;
-		case 3:
-			individual();
-			break;
-		default:
-			std::cout << "Choose the correct option";
-
-	
-	}
-}
-
-inline void maringo::school()
-{
-	//system("clear");
-	maringo mar;
-	char pay;
-	std::cout << "\t Have you paid ksh 500 (Y) for yes and (N) for no: ";
-	std::cin >> pay;
-	if (pay == 'Y' || pay == 'y') {
-		std::cout << "\t Kindly fill the following details: \n";
-		std::cout << "\t\t\t\t\tSchool name: ";
-		std::cin >> schoolName;
-		std::cout << "\t\t\t\t\tAdm No: ";
-		std::cin >> admNo;
-		std::cout << "\t\t\t\t\tClass: ";
-		std::cin >> stdClass; 
-		std::cout << "\n\t Thankyou!! You can now continue to the main registration \n";
-		mar.registration();
-	}
-	else if (pay == 'N' || pay == 'n') {
-		std::cout << "Kindly pay the registration fee!!!!";
-	}
-	else {
-		std::cout << "You have entered wrong choice!";
-	}
-
+	registration();
 
 }
-inline void maringo::religious()
-{
 
-	//system("clear");
-	maringo mar;
-	char pay;
-	std::cout << "\t Have you paid ksh 500 (Y) for yes and (N) for no: ";
-	std::cin >> pay;
-	if (pay == 'Y' || pay == 'y') {
-		std::cout << "\t Kindly fill the following details: \n";
-		std::cout << "\t\t\t\t\t Religious center: ";
-		std::cin >> schoolName;
-		std::cout << "\t\t\t\t\t Location: ";
-		std::cin >> location;
-		std::cout << "\n\t Thankyou!! You can now continue to the main registration \n";
-		mar.registration();
-	}
-	else if (pay == 'N' || pay == 'n') {
-		std::cout << "Kindly pay the registration fee!!!!";
-	}
-	else {
-		std::cout << "You have entered wrong choice!";
-	}
-
-
-
-}
-inline void maringo::individual()
-{	
-	maringo mar;
-	char pay;
-	std::cout << "\t You are required to pay 1,000 for registration.\n";
-	std::cout << "\t Have you paid ksh 1,000 (Y) for yes and (N) for no: ";
-	std::cin >> pay;
-	if (pay == 'Y' || pay == 'y') {
-		std::cout << "\n\t Thankyou!! You can now continue to the main registration \n";
-		mar.registration();
-	}
-	else if (pay == 'N' || pay == 'n') {
-		std::cout << "Kindly pay the registration fee!!!!";
-	}
-	else {
-		std::cout << "You have entered wrong choice!";
-	}
-
-
-
-
-}
 
 inline void maringo::registration()
 {
+	details youth;
 
-	registert *ptr, reg; //Create a pointer variable *ptr and normal variable reg of type registert.
-	ptr = &reg; //Store the address of variable reg in our pointer variable.
-	std::cout << "\n Fill the form bellow: \n";
-	std::cout << "\tFull name: ";
-	std::cin >> (*ptr).fullName;
-	std::cout << "\tGender: ";
-	std::cin >> (*ptr).gender ;
-	std::cout << "\tNext of kin: ";
-	std::cin >> (*ptr).nextOfKin ;
-	std::cout << "\tDate of birth: ";
-	std::cin >> (*ptr).dOB ;
-	std::cout << "\tContact: ";
-	std::cin >> (*ptr).contact ;
-	std::cout << "\tSub county: ";
-	std::cin >> (*ptr).subCounty ;
-	std::cout << "\tGames: ";
-	std::cin >> (*ptr).games ;
-	std::cout << "\tAge: ";
-	std::cin >> (*ptr).age ;
-	std::cout << "\tWeight: ";
-	std::cin >> (*ptr).weight ;
-	std::cout << "\tHeight: ";
-	std::cin >> (*ptr).height ;
-	std::cout << "\tSpecial needs: ";
-	std::cin >> (*ptr).specialNeeds ;
-	if ((*ptr).age >= 12 && (*ptr).age <= 17) {
-		std::cout << "Enrolled to the minor group\n\n";
-	}
-	else if ((*ptr).age >= 18 && (*ptr).age <= 25) {
-		std::cout << "Enrolled to the middle group\n\n";
-	
-	}
-	else if ((*ptr).age >= 26 && (*ptr).age <= 35) {
-		std::cout << "Enrolled to the senior group\n\n";
-	}
-	else {
-		std::cout << "You are not eligible\n";
-	}
+	    char choice;
+
+	    std::cout << "Please provide the following details:\n";
+	    std::cout << "Full name: ";
+	    std::getline(std::cin, youth.full_name);
+	    std::cout << "Gender (M/F/O): ";
+	    std::cin >> youth.gender;
+	    std::cout << "Next of kin: ";
+	    std::cin.ignore();
+	    std::getline(std::cin, youth.next_of_kin);
+	    std::cout << "Date of birth (DD/MM/YYYY): ";
+	    std::getline(std::cin, youth.date_of_birth);
+	    std::cout << "Contact details: ";
+	    std::getline(std::cin, youth.contact_details);
+	    std::cout << "Sub-counties: ";
+	    std::getline(std::cin, youth.sub_counties);
+	    std::cout << "School or college: ";
+	    std::getline(std::cin, youth.school_or_college);
+	    std::cout << "Games of interest (in order of priority, separated by spaces): ";
+	    std::string game;
+	    while (std::cin >> game) {
+		        if (game == "done") { // or any other end value
+			break; // exit the loop
+			    }
+		youth.games_of_interest.push_back(game);
+	    }
+	    std::cout << "Weight (in kg): ";
+	    std::cin >> youth.weight;
+	    std::cout << "Height (in cm): ";
+	    std::cin >> youth.height;
+	    std::cout << "Special needs: ";
+	    std::cin.ignore();
+	    std::getline(std::cin, youth.special_needs);
+
+	    std::cout << "\nDo you want to register as an individual or as a group? (I/G): ";
+	    std::cin >> choice;
+	    if (choice == 'I') {
+		std::cout << "Your individual membership fee is Kshs. " << calculate_individual_fee() << std::endl;
+	    } else if (choice == 'G') {
+		int num_members;
+		std::cout << "Number of members in your group: ";
+		std::cin >> num_members;
+		std::cout << "Your group membership fee is Kshs. " << calculate_group_fee(num_members) << std::endl;
+	    } else {
+		std::cout << "Invalid choice!" << std::endl;
+	    }
 }
+
 
