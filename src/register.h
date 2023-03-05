@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
-#include <sys/types.h>
-
+#include "main.h"
 
 struct registert
 {
