@@ -32,10 +32,12 @@ class maringo
 		void school();
 		void religious();
 		void registration();
+		void individual();
 };
 
 inline void maringo::welcome()
 {
+	int inpt;
 	system("clear");
 	std::cout << "\t\t|-----------------------------------------------|" << "\n";
 	std::cout << "\t\t|                                               |" << "\n"; 
@@ -63,6 +65,24 @@ inline void maringo::welcome()
 	std::cout << "\t\t|                                               |" << "\n"; 
 	std::cout << "\t\t|-----------------------------------------------|" << "\n\n\n";
 
+
+	std::cout << "\t\t Enter your choice: "; 
+	std::cin >> inpt;
+	switch (inpt) {
+		case 1:
+			school();
+			break;
+		case 2:
+			religious();
+			break;
+		case 3:
+			individual();
+			break;
+		default:
+			std::cout << "Choose the correct option";
+
+	
+	}
 }
 
 inline void maringo::school()
@@ -80,7 +100,7 @@ inline void maringo::school()
 		std::cin >> admNo;
 		std::cout << "\t\t\t\t\tClass: ";
 		std::cin >> stdClass; 
-		std::cout << "\t Thankyou!! You can now continue to the main registration \n";
+		std::cout << "\n\t Thankyou!! You can now continue to the main registration \n";
 		mar.registration();
 	}
 	else if (pay == 'N' || pay == 'n') {
@@ -106,7 +126,7 @@ inline void maringo::religious()
 		std::cin >> schoolName;
 		std::cout << "\t\t\t\t\t Location: ";
 		std::cin >> location;
-		std::cout << "\t Thankyou!! You can now continue to the main registration \n";
+		std::cout << "\n\t Thankyou!! You can now continue to the main registration \n";
 		mar.registration();
 	}
 	else if (pay == 'N' || pay == 'n') {
@@ -115,6 +135,28 @@ inline void maringo::religious()
 	else {
 		std::cout << "You have entered wrong choice!";
 	}
+
+
+
+}
+inline void maringo::individual()
+{	
+	maringo mar;
+	char pay;
+	std::cout << "\t You are required to pay 1,000 for registration.\n";
+	std::cout << "\t Have you paid ksh 1,000 (Y) for yes and (N) for no: ";
+	std::cin >> pay;
+	if (pay == 'Y' || pay == 'y') {
+		std::cout << "\n\t Thankyou!! You can now continue to the main registration \n";
+		mar.registration();
+	}
+	else if (pay == 'N' || pay == 'n') {
+		std::cout << "Kindly pay the registration fee!!!!";
+	}
+	else {
+		std::cout << "You have entered wrong choice!";
+	}
+
 
 
 
@@ -149,17 +191,17 @@ inline void maringo::registration()
 	std::cout << "\tSpecial needs: ";
 	std::cin >> (*ptr).specialNeeds ;
 	if ((*ptr).age >= 12 && (*ptr).age <= 17) {
-		std::cout << "Enrolled to the minor group";
+		std::cout << "Enrolled to the minor group\n\n";
 	}
 	else if ((*ptr).age >= 18 && (*ptr).age <= 25) {
-		std::cout << "Enrolled to the middle group";
+		std::cout << "Enrolled to the middle group\n\n";
 	
 	}
 	else if ((*ptr).age >= 26 && (*ptr).age <= 35) {
-		std::cout << "Enrolled to the senior group";
+		std::cout << "Enrolled to the senior group\n\n";
 	}
 	else {
-		std::cout << "You are not eligible";
+		std::cout << "You are not eligible\n";
 	}
 }
 
