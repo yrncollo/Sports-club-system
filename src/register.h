@@ -46,8 +46,7 @@ class maringo
 
 inline void maringo::welcome()
 {
-	int inpt;
-	system("clear");
+//	system("clear");
 	std::cout << "\t\t|-----------------------------------------------|" << "\n";
 	std::cout << "\t\t|                                               |" << "\n"; 
 	std::cout << "\t\t|     WELCOME TO MARINGO SPORTS CLUB SYSTEM     |" << "\n";

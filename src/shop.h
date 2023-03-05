@@ -56,7 +56,7 @@ inline void shop::recipt()
 	std::stringstream ss;
     	ss << std::fixed << std::setprecision(2) << total_price;
 	receipt += "Total: Ksh " + ss.str()  + "\n";
-	std::cout << "Thank you for shopping with us. Your total is Ksh " << std::fixed << std::setprecision(2) << total_price << std::endl;
+	std::cout << "\nThank you for shopping with us. Your total is Ksh " << std::fixed << std::setprecision(2) << total_price << std::endl;
 	std::cout << receipt << std::endl;
 
 

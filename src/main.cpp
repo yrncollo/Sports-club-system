@@ -8,11 +8,11 @@
 int main()
 {
 	maringo mar;
-	//mar.welcome();
+	mar.welcome();
 	shop sho;
 	sho.items();
-	//sho.recipt();
-	//Games games;
+	sho.recipt();
+	Games games;
 	//games.damages();
 	//games.damages_recipt();
 	//games.run_facilitation_fee();
