@@ -1,5 +1,5 @@
-#include <iostream>
-#include <iomanip>
+#include "main.h"
+
 
 class Games
 {
