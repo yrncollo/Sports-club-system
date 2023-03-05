@@ -22,15 +22,20 @@ class shop
 };
 inline void shop::items()
 {
+	system("clear");
+ 
+	std::cout << "\t|-----------------------------------------------|" << "\n"; 
+	std::cout << "\t|\t Maringo shopping platform              |" << "\n"; 
+	std::cout << "\t|-----------------------------------------------|" << "\n"; 
 	std::cout << "\t Item \t\t Amount/Per item (ksh)       " << "\n"; 
-	std::cout << " (1) \t Bloomer \t\t 250\n";
-	std::cout << " (2) \t Games shorts \t\t 750\n";
-	std::cout << " (3) \t Hockey stick \t\t 2,00\n";
-	std::cout << " (4) \t Socks \t\t\t 350\n";
-	std::cout << " (5) \t Sport shoes \t Ranging from 1,000 to 4,000\n";
-	std::cout << " (6) \t Track suit \t\t 1,000\n";
-	std::cout << " (7) \t T-shirt \t\t 800\n";
-	std::cout << " (8)\t Wrapper \t\t 450\n\n";
+	std::cout << "\t (1) \t Bloomer \t\t 250\n";
+	std::cout << "\t (2) \t Games shorts \t\t 750\n";
+	std::cout << "\t (3) \t Hockey stick \t\t 2,00\n";
+	std::cout << "\t (4) \t Socks \t\t\t 350\n";
+	std::cout << "\t (5) \t Sport shoes \t Ranging from 1,000 to 4,000\n";
+	std::cout << "\t (6) \t Track suit \t\t 1,000\n";
+	std::cout << "\t (7) \t T-shirt \t\t 800\n";
+	std::cout << "\t (8)\t Wrapper \t\t 450\n\n";
 
 	std::string items[8] = {"Bloomer", "Games shorts", "Hockey stick", "Socks", "Sport shoes", "Track suit", "T-shirt", "Wrapper"};
 	int prices[8] = {250, 750, 2000, 350, 3000, 1000, 800, 450};
@@ -47,6 +52,8 @@ inline void shop::items()
             std::cout << "Invalid choice. Please enter a number between 1 and 8, or 0 to finish.\n"  ;
         }
     } while (choice != 0);
+
+	std::cout << "\n Thankyou for shopping with us!!!!";
 
 }
 
