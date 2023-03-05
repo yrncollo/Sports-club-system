@@ -15,9 +15,9 @@ class shop
 };
 inline void shop::items()
 {
-	system("clear");
+//	system("clear");
  
-	std::cout << "\t|-----------------------------------------------|" << "\n"; 
+	std::cout << "\n\n\t|-----------------------------------------------|" << "\n"; 
 	std::cout << "\t|\t Maringo shopping platform              |" << "\n"; 
 	std::cout << "\t|-----------------------------------------------|" << "\n"; 
 	std::cout << "\t Item \t\t Amount/Per item (ksh)       " << "\n"; 
