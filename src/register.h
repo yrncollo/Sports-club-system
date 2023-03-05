@@ -34,7 +34,7 @@ class maringo
 		void registration();
 };
 
-void maringo::welcome()
+inline void maringo::welcome()
 {
 	system("clear");
 	std::cout << "\t\t|-----------------------------------------------|" << "\n";
@@ -65,7 +65,7 @@ void maringo::welcome()
 
 }
 
-void maringo::school()
+inline void maringo::school()
 {
 	//system("clear");
 	maringo mar;
@@ -92,7 +92,7 @@ void maringo::school()
 
 
 }
-void maringo::religious()
+inline void maringo::religious()
 {
 
 	//system("clear");
@@ -120,7 +120,7 @@ void maringo::religious()
 
 }
 
-void maringo::registration()
+inline void maringo::registration()
 {
 
 	registert *ptr, reg; //Create a pointer variable *ptr and normal variable reg of type registert.
