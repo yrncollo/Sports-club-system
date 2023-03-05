@@ -94,8 +94,8 @@ inline void maringo::registration()
 	    std::cout << "Games of interest (in order of priority, separated by spaces): ";
 	    std::string game;
 	    while (std::cin >> game) {
-		        if (game == "done") { // or any other end value
-			break; // exit the loop
+		        if (game == "done") { 
+			break; 
 			    }
 		youth.games_of_interest.push_back(game);
 	    }
