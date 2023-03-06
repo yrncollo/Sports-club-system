@@ -1,8 +1,12 @@
+#include <iostream>
+#include <string>
+#include <sys/types.h>
+#include <iomanip>
+#include <vector>
 
-#include "shop.h"
-#include "register.h"
-#include "games.h"
+
 #include "main.h"
+
 
 
 int main()
@@ -12,9 +16,9 @@ int main()
 	shop sho;
 	sho.items();
 	sho.recipt();
-	Games games;
-	//games.damages();
-	//games.damages_recipt();
-	//games.run_facilitation_fee();
+//	Games games;
+//	games.run_facilitation_fee();
+//	games.damages();
+//	games.damages_recipt();
 }
 

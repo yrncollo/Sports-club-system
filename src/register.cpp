@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+#include <sys/types.h>
+#include <iomanip>
+#include <vector>
+
 #include "main.h"
 
 struct details
@@ -17,34 +23,9 @@ struct details
 
 
 
-class maringo
-{
-	private:
-		int individual_fee = 1000;
-		int group_fee = 500;
-
-	public:
-		std::string admNo;
-		std::string stdClass; //student class
-		std::string schoolName;
-		std::string location;
-
-		void welcome();
-		void school();
-		void religious();
-		void registration();
-		void individual();
-		int calculate_individual_fee() {
-		    return individual_fee;
-		}
 
 
-		int calculate_group_fee(int num_members) {
-		    return group_fee * num_members;
-		}
-};
-
-inline void maringo::welcome()
+void maringo::welcome()
 {
 //	system("clear");
 	std::cout << "\t\t|-----------------------------------------------|" << "\n";
@@ -67,8 +48,7 @@ inline void maringo::welcome()
 
 }
 
-
-inline void maringo::registration()
+void maringo::registration()
 {
 	details youth;
 
@@ -90,7 +70,7 @@ inline void maringo::registration()
 	    std::getline(std::cin, youth.sub_counties);
 	    std::cout << "School or college: ";
 	    std::getline(std::cin, youth.school_or_college);
-	    std::cout << "Games of interest (in order of priority, separated by spaces): ";
+	    std::cout << "Games of interest (in order of priority, separated by spaces)(done to complete): ";
 	    std::string game;
 	    while (std::cin >> game) {
 		        if (game == "done") { 
@@ -111,7 +91,6 @@ inline void maringo::registration()
 	    if (choice == 'I') {
 		std::cout << "Your individual membership fee is Kshs. " << calculate_individual_fee() << std::endl;
 	    } else if (choice == 'G') {
-		int num_members;
 		std::cout << "Number of members in your group: ";
 		std::cin >> num_members;
 		std::cout << "Your group membership fee is Kshs. " << calculate_group_fee(num_members) << std::endl;
@@ -119,5 +98,4 @@ inline void maringo::registration()
 		std::cout << "Invalid choice!" << std::endl;
 	    }
 }
-
 

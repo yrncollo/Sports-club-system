@@ -1,19 +1,15 @@
+#include <iostream>
+#include <string>
+#include <sys/types.h>
+#include <iomanip>
+#include <vector>
+
+
 #include "main.h"
 
 
-class shop
-{
-	public:
-		std::string receipt;
-		float total_price = 0;
 
-
-		void items();
-		void recipt(); // This is not a typo but...
-
-
-};
-inline void shop::items()
+void shop::items()
 {
 //	system("clear");
  
@@ -51,7 +47,7 @@ inline void shop::items()
 }
 
 
-inline void shop::recipt()
+void shop::recipt()
 {
 	std::stringstream ss;
     	ss << std::fixed << std::setprecision(2) << total_price;

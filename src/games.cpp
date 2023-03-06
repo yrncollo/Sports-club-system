@@ -1,25 +1,7 @@
 #include "main.h"
+#include <iostream>
 
-
-class Games
-{
-	public:
-
-		std::string items[8] = {"Balls", "Bases", "Bats", "Sticks", "Racquets", "Nets", "Flying discs", "Cocks"};
-		int prices[8] = {250, 750, 2000, 350, 3000, 1000, 800, 450};
-		float total_price = 0;
-		std::string receipt;
-
-
-		void damages();
-		void damages_recipt();
-		float calculate_facilitation_fee(int num_team_members, bool external_team);
-		void run_facilitation_fee();
-
-		
-};
-
-inline void Games::damages()
+void Games::damages()
 {
 	std::cout << "The following are our equipments\n";
 	std::cout << "\t 1. balls \n";
@@ -50,7 +32,7 @@ inline void Games::damages()
 
 
 
-inline void Games::damages_recipt()
+void Games::damages_recipt()
 {
 	std::stringstream ss;
     	ss << std::fixed << std::setprecision(2) << ((total_price * 110) / 100);
@@ -63,7 +45,7 @@ inline void Games::damages_recipt()
 
 
 
-inline float Games::calculate_facilitation_fee(int num_team_members, bool external_team)
+float Games::calculate_facilitation_fee(int num_team_members, bool external_team)
 {
 	float facilitation_fee = 0;
 
@@ -77,10 +59,11 @@ inline float Games::calculate_facilitation_fee(int num_team_members, bool extern
 
 }
 
-inline void Games::run_facilitation_fee()
+void Games::run_facilitation_fee()
 {
 
-	int num_team_members = 10; // This should read from the database 
+	//maringo reg;
+	int num_team_members = 11; // This should read from the database 
 	bool external_team;
 
 	std::cout << "Is the team external or internal? (1 for external, 0 for internal): ";
