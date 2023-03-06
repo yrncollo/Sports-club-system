@@ -16,9 +16,9 @@ int main()
 	shop sho;
 	sho.items();
 	sho.recipt();
-//	Games games;
-//	games.run_facilitation_fee();
-//	games.damages();
-//	games.damages_recipt();
+	Games games;
+	games.run_facilitation_fee();
+	games.damages();
+	games.damages_recipt();
 }
 
